@@ -102,9 +102,10 @@ function addRemoveElements(args) {
 }
 
 function keyValuePairs(args) {
-    let arr = {};
-    for(let item of  args.slice(0, args.length - 1)){
-        let token = item.split(' ');
+    let arr = [];
+    let pairs = args.slice(0, args.length - 1);
+    for(let pair of pairs){
+        let token = pair.split(' ');
         let key = token[0];
         arr[key] = token[1]
     }
@@ -112,4 +113,55 @@ function keyValuePairs(args) {
     console.log(arr[key] || "None");
 }
 
-keyValuePairs(["3 test","3 test1","4 test2","4 test3","4 test5","4"]);
+function multipleValuesForAKey(args) {
+    let obj = {};
+    for(let item of  args.slice(0, args.length - 1)){
+        let token = item.split(' ');
+        let key = token[0];
+        let value = token[1];
+        if(obj[key]){
+            obj[key].push(value);
+        }else{
+            obj[key] = [];
+            obj[key].push(value);
+
+        }
+    }
+    let key = args[args.length - 1];
+    if(obj[key]){
+        console.log(obj[key].join("\n"));
+    }else{
+        console.log("None");
+    }
+}
+
+function storingObjects(args) {
+    let studentData = args.map(s => s.split(' -> '));
+
+    studentData.forEach(student => {
+        console.log(`Name: ${student[0]}\nAge: ${student[1]}\nGrade: ${student[2]}`);
+    });
+
+}
+
+function parseJSONObjects(args) {
+    let studentData = args.map(JSON.parse);
+    studentData.forEach(s =>{
+        console.log(`Name: ${s['name']}\nAge: ${s['age']}\nDate: ${s['date']}`);
+    });
+}
+
+function turnObjectIntoJSONString(args) {
+    let obj = {};
+    let data = args.map(s => s.split(' -> '));
+
+    data.forEach(prop => {
+        let key = prop[0];
+        if(key === 'age' || key === 'grade'){
+            obj[key] = Number(prop[1]);
+        }else{
+            obj[key] = prop[1];
+        }
+    });
+    console.log(JSON.stringify(obj));
+}

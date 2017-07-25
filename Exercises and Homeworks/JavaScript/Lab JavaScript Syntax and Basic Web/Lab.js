@@ -78,7 +78,7 @@ function extractCapitalCaseWords(arr) {
     let notEmptyWords = words.filter(w => w.length > 0);
 
     function isUppercase(str) {
-        return str == str.toUpperCase();
+        return str === str.toUpperCase();
     }
 
     let upWords = notEmptyWords.filter(isUppercase);
