@@ -33,8 +33,9 @@ The "Software Technologies" course provides the first steps in 5 technologies:
 - C# 6, Entity Framework, ASP.NET MVC, SQL Server 
 - Creating a blog with ASP.NET MVC and EF
 
-#Certificate:
-![software technologies - july 2017 - certificate-1](https://user-images.githubusercontent.com/16088420/36668054-b5f8298a-1af8-11e8-8004-df8a25357afa.jpg)
+# Certificate:
+![software technologies - july 2017 - certificate-1](https://user-images.githubusercontent.com/16088420/36668233-4e0f9cda-1af9-11e8-8c0e-5b7b4a203aed.jpg)
+
 
 
 
